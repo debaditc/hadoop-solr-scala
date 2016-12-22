@@ -1,0 +1,10 @@
+<!- Add below line in schema.xml -->
+
+<fieldType name="keep_phrase" class=solr.TextField sortMissingLast="true" multiValued="true"/>
+  <analyzer>
+    <tokenizer class="solr.StandardTokenizerFactory"/>
+     <filter class="solr.KeepWordFilterFactory" words="phrase.txt" ignoreCase="true"/>
+     <filter class="solr.SynonymFilterFactory" synonyms="mysynonyms.txt"/
+    <filter class="solr.LowerCaseFilterFactory"/>
+  </analyzer>
+</fieldType>
