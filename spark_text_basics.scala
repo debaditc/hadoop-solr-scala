@@ -13,3 +13,6 @@ data.flatMap(_.split("\\^")).collect()
 data.map(_.split("\\^")).map{ x => (x(0)+"_data",x(1)) }.collect()
 //res5: Array[(String, String)] = Array((key_data,value), (ABC_data,5662442), (XYZ_data,5662442), (XLI_data,2345), (XLV_data,12345), (XLA_data,12345), (ABS_data,11222))
 
+//Wordcount
+data.flatMap(_.split("\\^")).map((_,1)).reduceByKey(_+_).collect()
+//res10: Array[(String, Int)] = Array((ABC,1), (key,1), (XLA,1), (XYZ,1), (12345,2), (11222,1), (XLI,1), (ABS,1), (2345,1), (XLV,1), (5662442,2), (value,1))
