@@ -1,3 +1,6 @@
+//Create RDD 
+val data = sc.textFile('/user/chronicles/data.txt")
+
 data.collect()
 //res1: Array[String] = Array(key^value, ABC^5662442, XYZ^5662442, XLI^2345, XLV^12345, XLA^12345, ABS^11)
 
