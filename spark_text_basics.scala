@@ -1,4 +1,4 @@
-//Create RDD 
+//Create RDD from file in HDFS
 val data = sc.textFile("/user/chronicles/data.txt")
 
 data.collect()
